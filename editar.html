@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Registro</h1>
+        <form id="formularioEditar" onsubmit="guardarEdicion(event)">
+            <div class="row">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" required>
+            </div>
+            <div class="row">
+                <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fecha_nacimiento" required>
+            </div>
+            <div class="row">
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" required>
+            </div>
+            <div class="row">
+                <label for="alergias">Alergias:</label>
+                <input type="text" id="alergias">
+            </div>
+            <div class="row">
+                <label for="enfermedad">Enfermedad:</label>
+                <input type="text" id="enfermedad">
+            </div>
+            <div class="row">
+                <label for="medicamentos">Medicamentos:</label>
+                <input type="text" id="medicamentos">
+            </div>
+            <div class="row">
+                <label for="seguro_medico">Seguro Médico:</label>
+                <input type="text" id="seguro_medico">
+            </div>
+            <div class="row">
+                <label for="domicilio">Domicilio:</label>
+                <input type="text" id="domicilio" required>
+            </div>
+            <div class="row">
+                <label for="nacionalidad">Nacionalidad:</label>
+                <input type="text" id="nacionalidad" required>
+            </div>
+            <div class="row">
+                <label for="contacto1_nombre">Contacto 1 (Nombre):</label>
+                <input type="text" id="contacto1_nombre">
+            </div>
+            <div class="row">
+                <label for="contacto1_parentesco">Contacto 1 (Parentesco):</label>
+                <input type="text" id="contacto1_parentesco">
+            </div>
+            <div class="row">
+                <label for="contacto1_telefono">Contacto 1 (Teléfono):</label>
+                <input type="text" id="contacto1_telefono">
+            </div>
+            <div class="row">
+                <label for="contacto2_nombre">Contacto 2 (Nombre):</label>
+                <input type="text" id="contacto2_nombre">
+            </div>
+            <div class="row">
+                <label for="contacto2_parentesco">Contacto 2 (Parentesco):</label>
+                <input type="text" id="contacto2_parentesco">
+            </div>
+            <div class="row">
+                <label for="contacto2_telefono">Contacto 2 (Teléfono):</label>
+                <input type="text" id="contacto2_telefono">
+            </div>
+            <button type="submit">Guardar Edición</button>
+        </form>
+    </div>
+
+    <script src="editar.js"></script>
+</body>
+</html>

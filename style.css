@@ -1,0 +1,38 @@
+/* banner */
+
+.bio-container {
+    background-color: #A0445d;
+    width: 100%;
+  }
+  .bio-banner {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+      justify-content: space-between;
+    align-items: center;
+    height: 500px;
+  }
+  .bio-details h1 {
+    color: white;
+    font-size: 6.25rem;
+    font-weight: 900;
+  }
+  .bio-details p {
+    color: #000;
+    font-size: 1rem;
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  .bio-img {
+    width: 100px;
+      height: auto;
+      border-radius: 100%;
+      display: block;
+      align-items: center;
+      justify-content: space-between;
+    background-color: #c2b5b5;
+  }
+
+  /* card */

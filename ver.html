@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Registro</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #mapLink {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Detalles del Registro</h1>
+        <div id="registroDetalle" class="registration-form"></div>
+        
+        <h2>Ubicación en Vivo</h2>
+        <p id="ubicacionMensaje">Cargando ubicación...</p>
+        <a id="mapLink" target="_blank">Ver ubicación en el mapa</a>
+
+        <button onclick="window.location.href='consultar.html'">Volver a los registros</button>
+        <button onclick="editarRegistro()">Editar</button> <!-- Botón de editar -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            mostrarRegistroIndividual();
+            obtenerUbicacionEnVivo();
+        });
+
+        // Mostrar detalles del registro
+        function mostrarRegistroIndividual() {
+            const registroDetalle = document.getElementById('registroDetalle');
+            const verIndex = localStorage.getItem('verIndex');
+            const registros = JSON.parse(localStorage.getItem('registros')) || [];
+
+            if (verIndex !== null && registros[verIndex]) {
+                const registro = registros[verIndex];
+                registroDetalle.innerHTML = `
+                    <p><strong>Nombre Completo:</strong> ${registro.nombre}</p>
+                    <p><strong>Fecha de Nacimiento:</strong> ${registro.fechaNacimiento}</p>
+                    <p><strong>Edad:</strong> ${registro.edad}</p>
+                    <p><strong>Alergias:</strong> ${registro.alergias || 'Ninguna'}</p>
+                    <p><strong>Enfermedades:</strong> ${registro.enfermedad || 'Ninguna'}</p>
+                    <p><strong>Medicamentos:</strong> ${registro.medicamentos || 'Ninguno'}</p>
+                    <p><strong>Seguro Médico:</strong> ${registro.seguroMedico || 'Ninguno'}</p>
+                    <p><strong>Domicilio:</strong> ${registro.domicilio}</p>
+                    <p><strong>Nacionalidad:</strong> ${registro.nacionalidad}</p>
+                    <h4>Contacto 1</h4>
+                    <p><strong>Nombre:</strong> ${registro.contacto1.nombre}</p>
+                    <p><strong>Parentesco:</strong> ${registro.contacto1.parentesco}</p>
+                    <p><strong>Teléfono:</strong> ${registro.contacto1.telefono}</p>
+                    <h4>Contacto 2</h4>
+                    <p><strong>Nombre:</strong> ${registro.contacto2.nombre || 'No proporcionado'}</p>
+                    <p><strong>Parentesco:</strong> ${registro.contacto2.parentesco || 'No proporcionado'}</p>
+                    <p><strong>Teléfono:</strong> ${registro.contacto2.telefono || 'No proporcionado'}</p>
+                `;
+            } else {
+                registroDetalle.innerHTML = `<p>No se encontró el registro.</p>`;
+            }
+        }
+
+        // Obtener ubicación en vivo
+        function obtenerUbicacionEnVivo() {
+            const ubicacionMensaje = document.getElementById('ubicacionMensaje');
+            const mapLink = document.getElementById('mapLink');
+
+            if (!navigator.geolocation) {
+                ubicacionMensaje.textContent = 'La geolocalización no es soportada por tu navegador.';
+                return;
+            }
+
+            // Usar watchPosition para actualizaciones en vivo
+            navigator.geolocation.watchPosition(
+                (position) => {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+
+                    // Actualizar texto de la ubicación
+                    ubicacionMensaje.textContent = `Latitud: ${lat.toFixed(6)}, Longitud: ${lon.toFixed(6)}`;
+
+                    // Actualizar enlace al mapa
+                    mapLink.href = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}&zoom=15`;
+                    mapLink.textContent = "Ver ubicación en el mapa";
+                    mapLink.style.display = "block";
+                },
+                (error) => {
+                    ubicacionMensaje.textContent = 'No se pudo obtener la ubicación: ' + error.message;
+                },
+                { enableHighAccuracy: true } // Alta precisión de la busqueda de la ubicacion exacta 
+            );
+        }
+
+        // Función para redirigir a la página de edición
+        function editarRegistro() {
+            const verIndex = localStorage.getItem('verIndex');
+            if (verIndex !== null) {
+                window.location.href = `registro.html?editIndex=${verIndex}`;
+            }
+        }
+    </script>
+</body>
+</html>

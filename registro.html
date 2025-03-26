@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Persona</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>INFORMACIÓN PERSONAL</h1>
+        <div class="info-section">
+            <div class="row">
+                <label>Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre">
+            </div>
+            <div class="row">
+                <label>Fecha de nacimiento:</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+            </div>
+            <div class="row">
+                <label>Edad:</label>
+                <input type="text" id="edad" name="edad">
+                <label>Alergias:</label>
+                <input type="text" id="alergias" name="alergias">
+            </div>
+            <div class="row">
+                <label>Padecimientos:</label>
+                <input type="text" id="enfermedad" name="enfermedad">
+            </div>
+            <div class="row">
+                <label>Medicamentos o Tratamientos:</label>
+                <input type="text" id="medicamentos" name="medicamentos">
+            </div>
+            <div class="row">
+                <label>Seguro Médico:</label>
+                <input type="text" id="seguro_medico" name="seguro_medico">
+            </div>
+            <div class="row">
+                <label>Domicilio:</label>
+                <input type="text" id="domicilio" name="domicilio">
+            </div>
+            <div class="row">
+                <label>Nacionalidad:</label>
+                <input type="text" id="nacionalidad" name="nacionalidad">
+            </div>
+        </div>
+
+        <h1>INFORMACIÓN DE CONTACTOS DE EMERGENCIA</h1>
+        <div class="info-section">
+            <h3>Contacto 1</h3>
+            <div class="row">
+                <label>Nombre del Contacto 1:</label>
+                <input type="text" id="contacto1_nombre" name="contacto1_nombre">
+            </div>
+            <div class="row">
+                <label>Parentesco / Vínculo:</label>
+                <input type="text" id="contacto1_parentesco" name="contacto1_parentesco">
+            </div>
+            <div class="row">
+                <label>Teléfono:</label>
+                <input type="tel" id="contacto1_telefono" name="contacto1_telefono">
+            </div>
+
+            <h3>Contacto 2</h3>
+            <div class="row">
+                <label>Nombre del Contacto 2:</label>
+                <input type="text" id="contacto2_nombre" name="contacto2_nombre">
+            </div>
+            <div class="row">
+                <label>Parentesco / Vínculo:</label>
+                <input type="text" id="contacto2_parentesco" name="contacto2_parentesco">
+            </div>
+            <div class="row">
+                <label>Teléfono:</label>
+                <input type="tel" id="contacto2_telefono" name="contacto2_telefono">
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button onclick="guardarRegistro()">Guardar</button>
+            <button onclick="window.location.href='consultar.html'">Ver registros guardados</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

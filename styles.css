@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #7e6264;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    background-color: #631431;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #590c2b;
+    margin-bottom: 10px;
+}
+
+.info-section {
+    background-color: #d7d6cb;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #550828;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.row label {
+    width: 45%;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.row input {
+    width: 50%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #69010b;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #57021d;
+}
+
+button:active {
+    background-color: #661b34;
+}
+
+button:focus {
+    outline: none;
+}
+
+.registro {
+    background-color: #e3e5cf;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #3f0b16;
+}
+
+.registro button {
+    background-color: #610c38;
+    color: white;
+    margin-top: 5px;
+}
+
+.registro button:hover {
+    background-color: #791938;
+}
