@@ -9,10 +9,26 @@ function guardarEnLocalStorage(registros) {
     localStorage.setItem("registros", JSON.stringify(registros));
 }
 
+// Calcular la edad automáticamente
+function calcularEdad() {
+    const fechaNacimiento = document.getElementById('fecha_nacimiento').value;
+    if (fechaNacimiento) {
+        const hoy = new Date();
+        const nacimiento = new Date(fechaNacimiento);
+        let edad = hoy.getFullYear() - nacimiento.getFullYear();
+        const mes = hoy.getMonth() - nacimiento.getMonth();
+        if (mes < 0 || (mes === 0 && hoy.getDate() < nacimiento.getDate())) {
+            edad--;
+        }
+        document.getElementById('edad').value = edad;
+    }
+}
+
 // Guardar un nuevo registro
 function guardarRegistro() {
     const nombre = document.getElementById("nombre").value;
     const fechaNacimiento = document.getElementById("fecha_nacimiento").value;
+    calcularEdad(); // Asegurarse de calcular la edad antes de guardar
     const edad = document.getElementById("edad").value;
     const alergias = document.getElementById("alergias").value;
     const enfermedad = document.getElementById("enfermedad").value;
@@ -52,6 +68,12 @@ function guardarRegistro() {
 // Mostrar todos los registros guardados
 document.addEventListener('DOMContentLoaded', function() {
     mostrarRegistros();
+
+    // Agregar el evento onchange al campo de fecha de nacimiento
+    const fechaNacimientoInput = document.getElementById('fecha_nacimiento');
+    if (fechaNacimientoInput) {
+        fechaNacimientoInput.addEventListener('change', calcularEdad);
+    }
 });
 
 function mostrarRegistros() {
@@ -159,6 +181,7 @@ function actualizarRegistro(index) {
 
     const nombre = document.getElementById("nombre").value;
     const fechaNacimiento = document.getElementById("fecha_nacimiento").value;
+    calcularEdad(); // Asegurarse de calcular la edad antes de actualizar
     const edad = document.getElementById("edad").value;
     const alergias = document.getElementById("alergias").value;
     const enfermedad = document.getElementById("enfermedad").value;
