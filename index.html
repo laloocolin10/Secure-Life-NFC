@@ -11,11 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
     <link rel="icon" href="./img/banner.jpg">
-         <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
 
     <!-- Font Awesome -->
@@ -28,51 +26,104 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
-    
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /* CSS para asegurar que las redes sociales estén en la parte inferior */
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #2d2d2d;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-icon {
+            font-size: 24px;
+            margin: 0 15px;
+            color: #1e90ff; /* Azul brillante */
+            transition: color 0.3s;
+        }
+
+        .social-icon:hover {
+            color: #63aef7; /* Azul claro cuando se pasa el cursor */
+        }
+
+        /* Hacer que el contenido principal no se sobreponga al footer */
+        main {
+            padding-bottom: 80px; /* Deja espacio para el footer fijo */
+        }
+    </style>
 </head>
 <body>
+    <!-- Header / Navbar -->
     <header>
         <nav class="menu">
             <section class="menu__container">
                 <h1 class="menu__logo">
-                   <a href="./index.html"> <img src="./img/banner.jpg" class="menu_logo" alt=""></a>
+                   <a href="./index.html"> 
+                       <img src="Logo.png" class="menu_logo">
+                   </a>
                 </h1>
                 <ul class="menu__links">
                     <li class="menu__item">
                         <a href="./index.html" class="menu__link">Inicio</a>
                     </li>
-                    
                     <li class="menu__item">
                         <a href="./registro.html" class="menu__link">Registro</a>
                     </li>
                     <li class="menu__item">
                         <a href="./editar.html" class="menu__link">Editar Registro</a>
                     </li>
-                    
-                        </ul>
-                    </li> 
-    
                 </ul>
-    
-                <div class="menu__hamburguer">
-                    <img src="./img/menu.svg" class="menu__img">
+
+                <!-- Mobile Hamburger -->
+                <div class="menu__hamburguer" id="menu-toggle">
+                    <img src="./img/menu.svg" class="menu__img" alt="menu icon">
                 </div>
             </section>
         </nav>
-        <script src="/jouets/app.js"></script>
-        </header>
-      
-            <!-- card -->
-             <div class="card" style="width: auto;">
+    </header>
 
-   <img src="./Home.png">
-   <img src="./About.png">
-   <img src="./3.png">
-   <img src="./Contact.png">
-  
-             </div>
-          <!-- footer -->
+    <!-- Main Content -->
+    <main>
+        <!-- Card Section -->
+        <div class="card-container">
+            <div class="card" style="width: 100%;">
+                <img src="./Home.png" class="card-img" alt="Home">
+            </div>
+            <div class="card" style="width: 100%;">
+                <img src="./About.png" class="card-img" alt="About">
+            </div>
+            <div class="card" style="width: 100%;">
+                <img src="./3.png" class="card-img" alt="3">
+            </div>
+            <div class="card" style="width: 100%;">
+                <img src="./Contact.png" class="card-img" alt="Contact">
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 SecureLife NFC. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script src="/jouets/app.js"></script>
 </body>
 </html>

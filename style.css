@@ -1,38 +1,143 @@
-/* banner */
+/* General body styling */
+body {
+  background-color: #f4f8fb; /* Soft background */
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-.bio-container {
-    background-color: #A0445d;
-    width: 100%;
+/* Header (Navigation bar) */
+.menu {
+  background: linear-gradient(90deg, #00c6ff, #0072ff); /* Llamativo gradiente de azul */
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.menu__container {
+  display: flex;
+  justify-content: center; /* Centrado de los elementos */
+  align-items: center;
+  width: 100%;
+}
+
+.menu__logo img {
+  height: 60px; /* Aumentamos el tamaño del logo */
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.menu__logo img:hover {
+  transform: scale(1.1); /* Efecto de aumento del logo al pasar el cursor */
+}
+
+.menu__links {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* Más espacio entre los elementos del menú */
+}
+
+.menu__item {
+  font-size: 1.2rem; /* Aumentamos el tamaño de los elementos del menú */
+  font-weight: 600; /* Negrita para que sea más destacado */
+}
+
+.menu__link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu__link:hover {
+  color: #ffdd57; /* Color amarillo cuando el cursor pasa por encima */
+  transform: translateY(-5px); /* Sutil movimiento hacia arriba */
+}
+
+/* Mobile Navigation */
+.menu__hamburguer {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.menu__img {
+  width: 30px;
+}
+
+@media (max-width: 768px) {
+  .menu__links {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
   }
-  .bio-banner {
-    margin: 0 auto;
-    width: 80%;
+
+  .menu__links.active {
     display: flex;
-      justify-content: space-between;
-    align-items: center;
-    height: 500px;
-  }
-  .bio-details h1 {
-    color: white;
-    font-size: 6.25rem;
-    font-weight: 900;
-  }
-  .bio-details p {
-    color: #000;
-    font-size: 1rem;
-    margin-top: 10px;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 1px;
-  }
-  .bio-img {
-    width: 100px;
-      height: auto;
-      border-radius: 100%;
-      display: block;
-      align-items: center;
-      justify-content: space-between;
-    background-color: #c2b5b5;
   }
 
-  /* card */
+  .menu__hamburguer {
+    display: flex;
+  }
+}
+
+/* Card Section */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.card {
+  width: 90%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #1e90ff;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Social Media Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-icon {
+  font-size: 24px;
+  margin: 0 15px;
+  color: #1e90ff; /* Azul brillante */
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #63aef7; /* Azul claro cuando se pasa el cursor */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  footer {
+    padding: 10px;
+  }
+}

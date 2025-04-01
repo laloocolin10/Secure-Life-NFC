@@ -1,10 +1,10 @@
 * {
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif; /* Cambié la fuente a Poppins */
 }
 
 body {
-    background-color: #7e6264;
+    background-color: #f4f8fb; /* Fondo suave */
     margin: 0;
     padding: 40px;
     display: flex;
@@ -24,7 +24,7 @@ body {
 }
 
 h1 {
-    background-color: #631431;
+    background-color: #1e90ff; /* Azul fresco */
     color: white;
     padding: 10px;
     border-radius: 5px;
@@ -32,16 +32,16 @@ h1 {
 }
 
 h3 {
-    color: #590c2b;
+    color: #1e3b61; /* Azul oscuro para los subtítulos */
     margin-bottom: 10px;
 }
 
 .info-section {
-    background-color: #d7d6cb;
+    background-color: #d7e3f7; /* Color de fondo suave */
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
-    border: 1px solid #550828;
+    border: 1px solid #1e90ff; /* Borde azul */
 }
 
 .row {
@@ -71,7 +71,7 @@ h3 {
 }
 
 button {
-    background-color: #69010b;
+    background-color: #1e90ff; /* Azul brillante para botones */
     color: white;
     border: none;
     padding: 12px 24px;
@@ -83,11 +83,11 @@ button {
 }
 
 button:hover {
-    background-color: #57021d;
+    background-color: #63aef7; /* Azul claro al pasar el mouse */
 }
 
 button:active {
-    background-color: #661b34;
+    background-color: #1c74b8; /* Azul más oscuro al hacer clic */
 }
 
 button:focus {
@@ -95,19 +95,19 @@ button:focus {
 }
 
 .registro {
-    background-color: #e3e5cf;
+    background-color: #e3f7e3; /* Fondo verde suave para secciones de registro */
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 10px;
-    border: 1px solid #3f0b16;
+    border: 1px solid #2b8a3e;
 }
 
 .registro button {
-    background-color: #610c38;
+    background-color: #2b8a3e; /* Botón verde para registro */
     color: white;
     margin-top: 5px;
 }
 
 .registro button:hover {
-    background-color: #791938;
+    background-color: #357a46; /* Verde más oscuro al pasar el mouse */
 }
