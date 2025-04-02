@@ -25,7 +25,7 @@ body {
 
 /* Títulos */
 h1 {
-  background-color: #1e90ff; /* Azul fresco */
+  background-color: #074b62; /* Azul fresco */
   color: white;
   padding: 10px;
   border-radius: 5px;
@@ -139,7 +139,7 @@ button:focus {
 
 /* Header (Navigation bar) */
 .menu {
-  background: linear-gradient(90deg, #00c6ff, #0072ff); /* Llamativo gradiente de azul */
+  background: linear-gradient(90deg, #074b62, #074b62); /* Llamativo gradiente de azul */
   padding: 20px;
   position: sticky;
   top: 0;
@@ -248,7 +248,7 @@ button:focus {
 
 /* Footer */
 footer {
-  background-color: #1e90ff;
+  background-color: #074b62;
   color: white;
   text-align: center;
   padding: 15px 0;
