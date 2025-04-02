@@ -6,117 +6,12 @@
 
 body {
   background-color: #f4f8fb; /* Fondo suave */
-  color: #333;
   margin: 0;
   padding: 0;
+  color: #333;
 }
 
-/* Header (Navigation bar) */
-.menu {
-  background: linear-gradient(90deg, #00c6ff, #0072ff); /* Llamativo gradiente de azul */
-  padding: 20px;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 10;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-}
-
-.menu__container {
-  display: flex;
-  justify-content: space-between; /* Espacio entre logo y enlaces */
-  align-items: center;
-  width: 100%;
-}
-
-/* Logo en el menú */
-.menu__logo img {
-  height: 60px; /* Aumentamos el tamaño del logo */
-  width: auto;
-  transition: transform 0.3s ease;
-}
-
-.menu__logo img:hover {
-  transform: scale(1.1); /* Efecto de aumento del logo al pasar el cursor */
-}
-
-/* Estilos de los enlaces en el menú */
-.menu__links {
-  list-style: none;
-  display: flex;
-  gap: 30px; /* Más espacio entre los elementos del menú */
-}
-
-.menu__item {
-  font-size: 1.2rem; /* Aumentamos el tamaño de los elementos del menú */
-  font-weight: 600; /* Negrita para que sea más destacado */
-}
-
-.menu__link {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.menu__link:hover {
-  color: #ffdd57; /* Color amarillo cuando el cursor pasa por encima */
-  transform: translateY(-5px); /* Sutil movimiento hacia arriba */
-}
-
-/* Menú hamburguesa */
-.menu__hamburguer {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  cursor: pointer;
-}
-
-.menu__img {
-  width: 30px;
-}
-
-/* Mobile Navigation */
-@media (max-width: 768px) {
-  .menu__links {
-      display: none;
-      flex-direction: column;
-      gap: 20px;
-      width: 100%;
-      text-align: center; /* Centramos los enlaces */
-      padding: 0;
-  }
-
-  .menu__links.active {
-      display: flex;
-  }
-
-  .menu__hamburguer {
-      display: flex;
-  }
-
-  /* Estilo para el contenedor de la navbar en móviles */
-  .menu__container {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-  }
-
-  /* Hacer que los enlaces se vean bien en móvil */
-  .menu__links li {
-      width: 100%; /* Ocupan todo el ancho disponible */
-      padding: 10px;
-  }
-
-  .menu__link {
-      font-size: 1.2rem; /* Aumentar el tamaño de texto */
-      padding: 10px;
-      display: block;
-      width: 100%; /* Enlaces con 100% de ancho */
-      text-align: center; /* Centramos el texto */
-  }
-}
-
-/* General styling for container */
+/* Contenedor principal */
 .container {
   background-color: #ffffff;
   border-radius: 10px;
@@ -125,9 +20,10 @@ body {
   max-width: 800px;
   text-align: center;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
 }
 
-/* Section headers */
+/* Títulos */
 h1 {
   background-color: #1e90ff; /* Azul fresco */
   color: white;
@@ -141,7 +37,7 @@ h3 {
   margin-bottom: 10px;
 }
 
-/* Info sections */
+/* Estilo de la sección de información */
 .info-section {
   background-color: #d7e3f7; /* Color de fondo suave */
   padding: 20px;
@@ -150,6 +46,7 @@ h3 {
   border: 1px solid #1e90ff; /* Borde azul */
 }
 
+/* Filas dentro de los formularios */
 .row {
   display: flex;
   justify-content: space-between;
@@ -172,7 +69,7 @@ h3 {
   border: 1px solid #ccc;
 }
 
-/* Buttons */
+/* Botones */
 .buttons {
   margin-top: 20px;
 }
@@ -201,7 +98,27 @@ button:focus {
   outline: none;
 }
 
-/* Registro section */
+/* Estilo para el botón de regreso */
+.regresar-btn {
+  background-color: #ffdd57; /* Amarillo brillante para el botón de regreso */
+  color: #333; /* Texto oscuro */
+  font-size: 18px;
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.regresar-btn:hover {
+  background-color: #ffca28; /* Amarillo más oscuro al pasar el mouse */
+  transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+.regresar-btn:active {
+  transform: translateY(0); /* Restablecer el efecto al hacer clic */
+}
+
+/* Sección de registro */
 .registro {
   background-color: #e3f7e3; /* Fondo verde suave para secciones de registro */
   padding: 10px;
@@ -218,6 +135,115 @@ button:focus {
 
 .registro button:hover {
   background-color: #357a46; /* Verde más oscuro al pasar el mouse */
+}
+
+/* Header (Navigation bar) */
+.menu {
+  background: linear-gradient(90deg, #00c6ff, #0072ff); /* Llamativo gradiente de azul */
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.menu__container {
+  display: flex;
+  justify-content: center; /* Centrado de los elementos */
+  align-items: center;
+  width: 100%;
+}
+
+.menu__logo img {
+  height: 60px; /* Aumentamos el tamaño del logo */
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.menu__logo img:hover {
+  transform: scale(1.1); /* Efecto de aumento del logo al pasar el cursor */
+}
+
+.menu__links {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* Más espacio entre los elementos del menú */
+}
+
+.menu__item {
+  font-size: 1.2rem; /* Aumentamos el tamaño de los elementos del menú */
+  font-weight: 600; /* Negrita para que sea más destacado */
+}
+
+.menu__link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu__link:hover {
+  color: #ffdd57; /* Color amarillo cuando el cursor pasa por encima */
+  transform: translateY(-5px); /* Sutil movimiento hacia arriba */
+}
+
+/* Mobile Navigation */
+.menu__hamburguer {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.menu__img {
+  width: 30px;
+}
+
+@media (max-width: 768px) {
+  .menu__links {
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .menu__links.active {
+      display: flex;
+  }
+
+  .menu__hamburguer {
+      display: flex;
+  }
+
+  /* Responsive Design for the container */
+  .container {
+      padding: 15px;
+  }
+
+  .row {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .row label, .row input {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  button {
+      width: 100%; /* Los botones ocuparán el 100% del ancho */
+      padding: 12px;
+      font-size: 16px;
+  }
+
+  .regresar-btn {
+      font-size: 16px;
+      padding: 10px 25px;
+  }
+
+  /* Footer */
+  footer {
+      padding: 10px;
+  }
 }
 
 /* Footer */
@@ -247,11 +273,4 @@ footer {
 
 .social-icon:hover {
   color: #63aef7; /* Azul claro cuando se pasa el cursor */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  footer {
-      padding: 10px;
-  }
 }
